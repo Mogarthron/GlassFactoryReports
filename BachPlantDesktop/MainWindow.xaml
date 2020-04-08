@@ -5,12 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BachPlantDesktop"
         mc:Ignorable="d"
-        Title="Zestawiarnia" Height="450" Width="800">
+        Title="" Height="450" Width="800">
     <Grid>
-        <TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Options">
+                <MenuItem Header="Language">
+                    <MenuItem x:Name="MLPolisch" Click="MLPolisch_Click"/>
+                    <MenuItem x:Name="MLEnglisch" Click="MLEnglisch_Click"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <TabControl Grid.Row="1">
             <!--Recipes-->
             <TabItem x:Name="TCIRecipes">
-                <DataGrid x:Name="DGRecipes"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="DGRecipes" Grid.Column="0"/>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <DatePicker x:Name="DPCalendar"/>
+                        <ComboBox x:Name="CBRecipeName"/>
+                        <Label x:Name="LRecDiscription"/>
+                        <TextBox x:Name="TBRecipeDiscription"/>
+                        <Button x:Name="BtnAddRecipe"/>
+                    </StackPanel>
+                </Grid>                
             </TabItem>
             <!--Baches-->
             <TabItem x:Name="TCIBaches">
