@@ -27,13 +27,16 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DGRecipes" Grid.Column="0"/>
+                    <DataGrid x:Name="DGRecipes" Grid.Column="0">
+                        
+                    </DataGrid>
                     <StackPanel Orientation="Vertical" Grid.Column="1">
                         <DatePicker x:Name="DPCalendar"/>
                         <ComboBox x:Name="CBRecipeName"/>
                         <Label x:Name="LRecDiscription"/>
                         <TextBox x:Name="TBRecipeDiscription"/>
                         <Button x:Name="BtnAddRecipe"/>
+                        <Button x:Name="BtnDelRecipe" Click="BtnDelRecipe_Click"/>
                     </StackPanel>
                 </Grid>                
             </TabItem>
