@@ -4,22 +4,17 @@ using System.Text;
 
 namespace ModelsLibrary
 {
-    public class Recipe
-    {
-		private int _id;
-		private DateTime _CreationDate;
+    public class Recipe : IDClass
+    {		
+		private DateTime _Date;
+		private string _CreationDate;
 		private string _RecipeName;
 		private bool _Active;
 		private string _Comments;		
 
-		public int Id()
-		{
-			return _id;
-		}
-
 		#region publicProp
 			   
-		public DateTime CreationDate
+		public string CreationDate
 		{
 			get { return _CreationDate; }
 			set { _CreationDate = value; }
@@ -44,13 +39,15 @@ namespace ModelsLibrary
 		}
 
         #endregion
-
+			   		 
         public Recipe( int Id, DateTime dateTime, string Name, bool Active, string Comments)
 		{
-			_id = Id;
-			_CreationDate = dateTime;			
+			SetID(Id);
+			_Date = dateTime;
+			_CreationDate = dateTime.ToShortDateString();
 			_RecipeName = Name;
 			_Active = Active;
+			_Comments = Comments;
 		}
 
 	}

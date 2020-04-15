@@ -11,15 +11,31 @@ namespace Core3Library
         private SqlConnection cnn = new SqlConnection(connetionString);
 
         static private SqlCommand command;        
+         
+        List<SqlParameter> SqlParameters = new List<SqlParameter>();
 
-        public SqlDataReader dataReader { get; set; }        
+        public SqlDataReader dataReader { get; set; }              
 
-        public void InsertConnection(string sql)
+        public void AddParameterToList(string parameterName, System.Data.SqlDbType DataType, object value)
+        {
+            SqlParameter sqlParameter = new SqlParameter(parameterName, DataType);
+            sqlParameter.Value = value;
+
+            SqlParameters.Add(sqlParameter);
+        }       
+
+        public void InsertConnection(string sp)
         {
             cnn.Open();
-            command = new SqlCommand(sql, cnn);
+            command = new SqlCommand(sp, cnn);            
+            command.CommandType = System.Data.CommandType.StoredProcedure;                       
+
+            if (SqlParameters != null)
+                command.Parameters.AddRange(SqlParameters.ToArray());
+
             command.ExecuteNonQuery();
-            cnn.Close();
+            cnn.Close();            
+            SqlParameters.Clear();
         }
 
         public void StartConnection(string sql)

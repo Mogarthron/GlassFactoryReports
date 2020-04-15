@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelsLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,11 +35,11 @@ namespace BachPlantDesktop
             TCIRecipes.Header = RecipesTabControllItem[0];
             TCIBaches.Header = BachesTabControllItem[0];
             BtnAddRecipe.Content = "Dodaj Recepturę";
-            BtnDelRecipe.Content = "Usuń Recepturę";
+            BtnDelRecipe.Content = "Sprawdź coś tam";
             MLEnglisch.Header = LanguageVer[1];
             MLPolisch.Header = LanguageVer[0];
 
-            LoadRecipes();
+            logic.LoadRecipes(DGRecipes);
         }
 
         private void MLPolisch_Click(object sender, RoutedEventArgs e)
@@ -55,22 +56,24 @@ namespace BachPlantDesktop
             TCIRecipes.Header = RecipesTabControllItem[1];
             TCIBaches.Header = BachesTabControllItem[1];
             BtnAddRecipe.Content = "Add Recipe";
-        }
-
-        private void LoadRecipes()
-        {
-            DGRecipes.ItemsSource = logic.ShowRecipes();
-        }
+        }        
 
         private void SelectedRow()
         {
-            string msg = DGRecipes.SelectedItem.ToString();
-            MessageBox.Show(msg);
+            Recipe msg = (Recipe)DGRecipes.SelectedItem;
+            MessageBox.Show(msg.GetID().ToString());
         }
 
         private void BtnDelRecipe_Click(object sender, RoutedEventArgs e)
         {
             SelectedRow();
+        }
+
+        private void BtnAddRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            logic.InsertRecipe(DPCalendar.SelectedDate.Value, TBRecipeName.Text, TBRecipeDiscription.Text);
+            
+            logic.LoadRecipes(DGRecipes);            
         }
     }
 }

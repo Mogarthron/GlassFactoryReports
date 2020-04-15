@@ -32,10 +32,11 @@
                     </DataGrid>
                     <StackPanel Orientation="Vertical" Grid.Column="1">
                         <DatePicker x:Name="DPCalendar"/>
-                        <ComboBox x:Name="CBRecipeName"/>
-                        <Label x:Name="LRecDiscription"/>
+                        <Label x:Name="LRecName" Content="Nazwa Receptury"/>
+                        <TextBox x:Name="TBRecipeName"/>
+                        <Label x:Name="LRecDiscription" Content="Opis Receptury"/>
                         <TextBox x:Name="TBRecipeDiscription"/>
-                        <Button x:Name="BtnAddRecipe"/>
+                        <Button x:Name="BtnAddRecipe" Click="BtnAddRecipe_Click"/>
                         <Button x:Name="BtnDelRecipe" Click="BtnDelRecipe_Click"/>
                     </StackPanel>
                 </Grid>                

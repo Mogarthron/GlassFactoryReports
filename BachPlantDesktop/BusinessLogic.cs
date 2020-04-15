@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Core3Library;
-using ModelsLibrary;
+using System.Windows.Controls;
+using BachPlantDesktop.Tables;
+using Core3Library.Querys;
 
 namespace BachPlantDesktop
 {
     class BusinessLogic
     {
-        DBConnection dB = new DBConnection();
-        List<Recipe> recipes = new List<Recipe>();
-
-        public List<Recipe> ShowRecipes()
+        RecipeTable table = new RecipeTable();
+        
+        RecipeQuery recipeQuery = new RecipeQuery();
+        
+        public void LoadRecipes(DataGrid dataGrid)
         {
-            dB.StartConnection("exec dbo.spReceptury_PokazWszystkie");
-
-            while (dB.dataReader.Read())
-            {
-                recipes.Add(new Recipe(dB.dataReader.GetInt32(0), dB.dataReader.GetDateTime(1), dB.dataReader.GetString(2), dB.dataReader.GetBoolean(3), dB.dataReader.GetString(4)));
-            }
-
-            dB.EndConnection();
-
-            return recipes;
+            //dataGrid.DataContext = table;
+            
+            dataGrid.ItemsSource = recipeQuery.AdminRecipes();
         }
+
+        public void InsertRecipe(DateTime date, string name, string comm)
+        {
+            recipeQuery.InsertRecipe(date, name, comm);
+        }
+        
 
         public BusinessLogic()
         {
