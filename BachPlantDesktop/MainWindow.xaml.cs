@@ -24,9 +24,9 @@ namespace BachPlantDesktop
         BusinessLogic logic = new BusinessLogic();
 
         string[] LanguageVer = { "Polski", "Englisch" };
-        string[] AppTitle = { "Zestawiarnia", "Bach Plant" };
+        string[] AppTitle = { "Zestawiarnia", "Batch Plant" };
         string[] RecipesTabControllItem = { "Receptury", "Recipes" };
-        string[] BachesTabControllItem = { "Zestawy", "Baches" };
+        string[] BachesTabControllItem = { "Zestawy", "Batches" };
 
         public MainWindow()
         {
@@ -35,7 +35,7 @@ namespace BachPlantDesktop
             TCIRecipes.Header = RecipesTabControllItem[0];
             TCIBaches.Header = BachesTabControllItem[0];
             BtnAddRecipe.Content = "Dodaj Recepturę";
-            BtnDelRecipe.Content = "Sprawdź coś tam";
+            BtnUpdateRecipe.Content = "Sprawdź coś tam";
             MLEnglisch.Header = LanguageVer[1];
             MLPolisch.Header = LanguageVer[0];
 
@@ -56,23 +56,17 @@ namespace BachPlantDesktop
             TCIRecipes.Header = RecipesTabControllItem[1];
             TCIBaches.Header = BachesTabControllItem[1];
             BtnAddRecipe.Content = "Add Recipe";
-        }        
+        }                
 
-        private void SelectedRow()
-        {
-            Recipe msg = (Recipe)DGRecipes.SelectedItem;
-            MessageBox.Show(msg.GetID().ToString());
-        }
-
-        private void BtnDelRecipe_Click(object sender, RoutedEventArgs e)
-        {
-            SelectedRow();
+        private void BtnUpdateRecipe_Click(object sender, RoutedEventArgs e)
+        {            
+            logic.UpdateRecipe(DGRecipes);
+            logic.LoadRecipes(DGRecipes);
         }
 
         private void BtnAddRecipe_Click(object sender, RoutedEventArgs e)
         {
-            logic.InsertRecipe(DPCalendar.SelectedDate.Value, TBRecipeName.Text, TBRecipeDiscription.Text);
-            
+            logic.InsertRecipe(DPCalendar.SelectedDate.Value, TBRecipeName.Text, TBRecipeDiscription.Text);            
             logic.LoadRecipes(DGRecipes);            
         }
     }

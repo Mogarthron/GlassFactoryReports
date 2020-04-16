@@ -10,9 +10,18 @@ namespace Core3Library.Querys
         DBConnection dB = new DBConnection();
         List<Recipe> recipes = new List<Recipe>();
 
+        List<string> sp = new List<string>()
+        {
+            "dbo.spReceptury_DodajRecepture", //Add Recipe to main List
+            "dbo.spReceptury_AktualizujDodstepnosc", //Update Active column
+            "dbo.spReceptury_WybierzAktywne", //Show active recipes
+            "dbo.spReceptury_PokazWszystkie"
+        };
+
+
         public List<Recipe> AdminRecipes()
         {
-            dB.StartConnection("exec dbo.spReceptury_PokazWszystkie");
+            dB.StartConnection(sp[3]);
 
             while (dB.dataReader.Read())
             {
@@ -26,14 +35,22 @@ namespace Core3Library.Querys
 
         public void InsertRecipe(DateTime _date, string _name, string _comments)
         {
-            string sp = "dbo.spReceptury_DodajRecepture";            
-
             dB.AddParameterToList("@DataDodania", System.Data.SqlDbType.Date, _date.ToShortDateString());
             dB.AddParameterToList("@NazwaReceptury", System.Data.SqlDbType.NVarChar, _name);
             dB.AddParameterToList("@Uwagi", System.Data.SqlDbType.NVarChar, _comments);
 
-            dB.InsertConnection(sp);
-            
+            dB.Connection(sp[0]);
+
+            recipes.Clear();
+        }
+
+        public void UpdateRecipeActivity(int id, int a)
+        {
+            dB.AddParameterToList("@id", System.Data.SqlDbType.Int, id);
+            dB.AddParameterToList("@Aktywna", System.Data.SqlDbType.Bit, a);
+
+            dB.Connection(sp[1]);
+
             recipes.Clear();
         }
 

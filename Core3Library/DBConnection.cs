@@ -24,7 +24,11 @@ namespace Core3Library
             SqlParameters.Add(sqlParameter);
         }       
 
-        public void InsertConnection(string sp)
+        /// <summary>
+        /// Method to execute non select querrys
+        /// </summary>
+        /// <param name="sp">Stored Procedure</param>
+        public void Connection(string sp)
         {
             cnn.Open();
             command = new SqlCommand(sp, cnn);            
@@ -38,10 +42,11 @@ namespace Core3Library
             SqlParameters.Clear();
         }
 
-        public void StartConnection(string sql)
+        public void StartConnection(string sp)
         {
             cnn.Open();
-            command = new SqlCommand(sql, cnn);
+            command = new SqlCommand(sp, cnn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
             dataReader = command.ExecuteReader();
         }
 

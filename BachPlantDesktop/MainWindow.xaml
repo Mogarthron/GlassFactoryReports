@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BachPlantDesktop"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800">
+        Title="" Height="450" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -36,14 +36,22 @@
                         <TextBox x:Name="TBRecipeName"/>
                         <Label x:Name="LRecDiscription" Content="Opis Receptury"/>
                         <TextBox x:Name="TBRecipeDiscription"/>
-                        <Button x:Name="BtnAddRecipe" Click="BtnAddRecipe_Click"/>
-                        <Button x:Name="BtnDelRecipe" Click="BtnDelRecipe_Click"/>
+                        <Button x:Name="BtnAddRecipe" Click="BtnAddRecipe_Click"/>                        
+                        <Button x:Name="BtnUpdateRecipe" Click="BtnUpdateRecipe_Click"/>
                     </StackPanel>
                 </Grid>                
             </TabItem>
             <!--Baches-->
             <TabItem x:Name="TCIBaches">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="DGBatches" Grid.Column="0">
+                        
+                    </DataGrid>
+                </Grid>
             </TabItem>
         </TabControl>
         
