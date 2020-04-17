@@ -1,0 +1,15 @@
+﻿<Window x:Class="BachPlantDesktop.AddBatchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BachPlantDesktop"
+        mc:Ignorable="d"
+        Title="AddBatchWindow" Height="300" Width="200">
+    <StackPanel Orientation="Vertical">
+        <DatePicker x:Name="DTPreparationDate" />
+        <ComboBox x:Name="CBRecpieName" />
+        <TextBox x:Name="TBPreparedBatches" />
+        <Button x:Name="BtnAddBatch" Content="Dodaj Zestaw" Click="BtnAddBatch_Click"/>
+    </StackPanel>
+</Window>

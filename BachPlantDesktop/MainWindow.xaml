@@ -48,9 +48,14 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="DGBatches" Grid.Column="0">
+                    <DataGrid x:Name="DGBatches" Grid.Column="0" >
                         
                     </DataGrid>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <Button x:Name="BtnOpenAddBatchWindow" 
+                                Content="Dodaj Zestaw"
+                                Click="BtnOpenAddBatchWindow_Click"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>

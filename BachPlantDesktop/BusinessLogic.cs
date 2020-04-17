@@ -11,10 +11,11 @@ namespace BachPlantDesktop
 {
     class BusinessLogic
     {
+        RecipeQuery recipeQuery = new RecipeQuery();
+        BatchQuery batchQuery = new BatchQuery();        
+
         #region Recipes
 
-        RecipeQuery recipeQuery = new RecipeQuery();        
-        
         public void LoadRecipes(DataGrid dataGrid)
         {            
             dataGrid.ItemsSource = recipeQuery.AdminRecipes();            
@@ -33,19 +34,52 @@ namespace BachPlantDesktop
             int f = 0;
             
             if(recipe.Active == true)
-            {
-                //MessageBox.Show($"ID {recipe.GetID()}, Active {t}");
+            {                
                 recipeQuery.UpdateRecipeActivity(recipe.GetID(), t);
             }
             else
-            {
-                //MessageBox.Show($"ID {recipe.GetID()}, Active {f}");
+            {                
                 recipeQuery.UpdateRecipeActivity(recipe.GetID(), f);
             }            
         }
 
         #endregion
 
+        #region Batches
+
+        public void LoadBatches(DataGrid dataGrid)
+        {
+            dataGrid.ItemsSource = batchQuery.ShowBatches();
+        }
+
+
+        public void LoadRecipesNames(ComboBox comboBox)
+        {
+            List<string> recipeNames = new List<string>();
+
+            foreach(Recipe r in recipeQuery.UserRecipes())
+            {
+                recipeNames.Add(r.RecipeName);
+            }
+
+            comboBox.ItemsSource = recipeNames;
+        }
+
+        public void InsertBatch(DateTime date, string recipeName, int preparatedBatches)
+        {            
+            foreach(Recipe r in recipeQuery.UserRecipes())
+            {
+                if (recipeName == r.RecipeName)
+                { 
+                    //MessageBox.Show(r.GetID().ToString());
+                    batchQuery.InsertBatch(date, r.GetID(), preparatedBatches);
+                }
+            }            
+        }
+
+
+
+        #endregion
 
         public BusinessLogic()
         {            

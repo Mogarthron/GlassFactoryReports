@@ -14,6 +14,8 @@ namespace Core3Library
          
         List<SqlParameter> SqlParameters = new List<SqlParameter>();
 
+        
+
         public SqlDataReader dataReader { get; set; }              
 
         public void AddParameterToList(string parameterName, System.Data.SqlDbType DataType, object value)
@@ -41,6 +43,33 @@ namespace Core3Library
             cnn.Close();            
             SqlParameters.Clear();
         }
+
+
+        //public List<Object> List = new List<object>();
+
+        //public void Connection(string sp, object obj)
+        //{
+        //    cnn.Open();
+        //    command = new SqlCommand(sp, cnn);
+        //    command.CommandType = System.Data.CommandType.StoredProcedure;
+        //    dataReader = command.ExecuteReader();
+
+        //    /////
+        //    ///
+        //    while (dataReader.Read())
+        //    {
+        //        List.Add(new object());
+        //    }
+
+        //    /////
+        //    ///
+
+        //    dataReader.Close();
+        //    command.Dispose();
+        //    cnn.Close();
+
+        //}
+
 
         public void StartConnection(string sp)
         {

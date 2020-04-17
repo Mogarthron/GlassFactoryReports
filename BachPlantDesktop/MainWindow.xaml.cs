@@ -40,6 +40,7 @@ namespace BachPlantDesktop
             MLPolisch.Header = LanguageVer[0];
 
             logic.LoadRecipes(DGRecipes);
+            logic.LoadBatches(DGBatches);
         }
 
         private void MLPolisch_Click(object sender, RoutedEventArgs e)
@@ -68,6 +69,12 @@ namespace BachPlantDesktop
         {
             logic.InsertRecipe(DPCalendar.SelectedDate.Value, TBRecipeName.Text, TBRecipeDiscription.Text);            
             logic.LoadRecipes(DGRecipes);            
+        }
+
+        private void BtnOpenAddBatchWindow_Click(object sender, RoutedEventArgs e)
+        {
+            AddBatchWindow window = new AddBatchWindow();
+            window.Show();
         }
     }
 }

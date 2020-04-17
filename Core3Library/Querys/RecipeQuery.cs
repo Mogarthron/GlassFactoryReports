@@ -8,25 +8,43 @@ namespace Core3Library.Querys
     public class RecipeQuery
     {
         DBConnection dB = new DBConnection();
-        List<Recipe> recipes = new List<Recipe>();
+        List<Recipe> recipes = new List<Recipe>();        
 
         List<string> sp = new List<string>()
         {
             "dbo.spReceptury_DodajRecepture", //Add Recipe to main List
             "dbo.spReceptury_AktualizujDodstepnosc", //Update Active column
             "dbo.spReceptury_WybierzAktywne", //Show active recipes
-            "dbo.spReceptury_PokazWszystkie"
+            "dbo.spReceptury_PokazWszystkie" //Show all recipes
         };
 
 
         public List<Recipe> AdminRecipes()
         {
+            recipes.Clear();
+
             dB.StartConnection(sp[3]);
 
             while (dB.dataReader.Read())
             {
                 recipes.Add(new Recipe(dB.dataReader.GetInt32(0), dB.dataReader.GetDateTime(1), dB.dataReader.GetString(2), dB.dataReader.GetBoolean(3), dB.dataReader.GetString(4)));
             }
+
+            dB.EndConnection();
+
+            return recipes;
+        }
+
+        public List<Recipe> UserRecipes()
+        {
+            recipes.Clear();
+
+            dB.StartConnection(sp[2]);
+
+            while (dB.dataReader.Read())
+            {
+                recipes.Add(new Recipe(dB.dataReader.GetInt32(0), dB.dataReader.GetDateTime(1), dB.dataReader.GetString(2), dB.dataReader.GetBoolean(3), dB.dataReader.GetString(4)));
+            }            
 
             dB.EndConnection();
 
