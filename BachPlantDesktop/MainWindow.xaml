@@ -55,6 +55,9 @@
                         <Button x:Name="BtnOpenAddBatchWindow" 
                                 Content="Dodaj Zestaw"
                                 Click="BtnOpenAddBatchWindow_Click"/>
+                        <Button x:Name="BtnRefreschBatches" 
+                                Content="Odświerz"
+                                Click="BtnRefreschBatches_Click"/>
                     </StackPanel>
                 </Grid>
             </TabItem>

@@ -76,5 +76,11 @@ namespace BachPlantDesktop
             AddBatchWindow window = new AddBatchWindow();
             window.Show();
         }
+
+        private void BtnRefreschBatches_Click(object sender, RoutedEventArgs e)
+        {           
+            logic.LoadBatches(DGBatches);
+            DGBatches.Focus();
+        }
     }
 }
