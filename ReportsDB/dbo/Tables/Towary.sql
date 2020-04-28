@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Towary]
+(
+	[id] INT NOT NULL IDENTITY (1,1) PRIMARY KEY,
+	[NazwaTowaru] NVARCHAR(100) NOT NULL,
+	[KodTowaru] NVARCHAR(30),
+	[Uwagi] NVARCHAR(120)
+)

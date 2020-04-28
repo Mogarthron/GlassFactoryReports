@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:BachPlantDesktop"
         mc:Ignorable="d"
         Title="" Height="450" Width="900">
+    <Window.Resources>
+        <Style TargetType="Grid" x:Key="TCGrid">
+            
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -58,6 +63,27 @@
                         <Button x:Name="BtnRefreschBatches" 
                                 Content="Odświerz"
                                 Click="BtnRefreschBatches_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <!--Materials-->
+            <TabItem x:Name="TCIMaterials">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="DGMaterials" Grid.Column="0" >
+ 
+                    </DataGrid>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <TextBox x:Name="TBMaterialName" ToolTip="Nazwa Materiału"/>
+                        <TextBox x:Name="TBMaterialCode" ToolTip="Kod Materiału"/>
+                        <TextBox x:Name="TBMaterilComments" ToolTip="Uwagi"/>
+                        <Button x:Name="BtnOpenAddMaterialWindow" 
+                                Content="Dodaj nowy materiał"
+                                Click="BtnOpenAddMaterialWindow_Click"/>
+                        
                     </StackPanel>
                 </Grid>
             </TabItem>

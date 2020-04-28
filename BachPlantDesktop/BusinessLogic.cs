@@ -12,7 +12,8 @@ namespace BachPlantDesktop
     class BusinessLogic
     {
         RecipeQuery recipeQuery = new RecipeQuery();
-        BatchQuery batchQuery = new BatchQuery();        
+        BatchQuery batchQuery = new BatchQuery();
+        MaterialQuery materialQuery = new MaterialQuery();
 
         #region Recipes
 
@@ -77,9 +78,24 @@ namespace BachPlantDesktop
             }            
         }
 
+        #endregion
 
+        #region Materials
+
+        public void LoadMaterials(DataGrid dataGrid)
+        {
+            dataGrid.ItemsSource = materialQuery.ShowMaterials();
+        }
+
+        public void InsertMaterial(string name, string code, string comments)
+        {
+            materialQuery.InsertMaterial(name, code, comments);
+        }
 
         #endregion
+
+
+
 
         public BusinessLogic()
         {            

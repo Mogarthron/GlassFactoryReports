@@ -12,9 +12,7 @@ namespace Core3Library
 
         static private SqlCommand command;        
          
-        List<SqlParameter> SqlParameters = new List<SqlParameter>();
-
-        
+        List<SqlParameter> SqlParameters = new List<SqlParameter>();        
 
         public SqlDataReader dataReader { get; set; }              
 

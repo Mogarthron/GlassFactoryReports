@@ -27,6 +27,7 @@ namespace BachPlantDesktop
         string[] AppTitle = { "Zestawiarnia", "Batch Plant" };
         string[] RecipesTabControllItem = { "Receptury", "Recipes" };
         string[] BachesTabControllItem = { "Zestawy", "Batches" };
+        string[] MaterialsTabControllIteamHeader = { "Materiały", "Materials" };
 
         public MainWindow()
         {
@@ -34,6 +35,7 @@ namespace BachPlantDesktop
             Title = AppTitle[0];
             TCIRecipes.Header = RecipesTabControllItem[0];
             TCIBaches.Header = BachesTabControllItem[0];
+            TCIMaterials.Header = MaterialsTabControllIteamHeader[0];
             BtnAddRecipe.Content = "Dodaj Recepturę";
             BtnUpdateRecipe.Content = "Sprawdź coś tam";
             MLEnglisch.Header = LanguageVer[1];
@@ -41,7 +43,10 @@ namespace BachPlantDesktop
 
             logic.LoadRecipes(DGRecipes);
             logic.LoadBatches(DGBatches);
+            logic.LoadMaterials(DGMaterials);
         }
+
+        #region Menu
 
         private void MLPolisch_Click(object sender, RoutedEventArgs e)
         {
@@ -57,7 +62,11 @@ namespace BachPlantDesktop
             TCIRecipes.Header = RecipesTabControllItem[1];
             TCIBaches.Header = BachesTabControllItem[1];
             BtnAddRecipe.Content = "Add Recipe";
-        }                
+        }
+
+        #endregion
+
+        #region RecipeTab
 
         private void BtnUpdateRecipe_Click(object sender, RoutedEventArgs e)
         {            
@@ -70,7 +79,9 @@ namespace BachPlantDesktop
             logic.InsertRecipe(DPCalendar.SelectedDate.Value, TBRecipeName.Text, TBRecipeDiscription.Text);            
             logic.LoadRecipes(DGRecipes);            
         }
+        #endregion
 
+        #region BatchTab
         private void BtnOpenAddBatchWindow_Click(object sender, RoutedEventArgs e)
         {
             AddBatchWindow window = new AddBatchWindow();
@@ -81,6 +92,14 @@ namespace BachPlantDesktop
         {           
             logic.LoadBatches(DGBatches);
             DGBatches.Focus();
+        }
+
+        #endregion
+
+        private void BtnOpenAddMaterialWindow_Click(object sender, RoutedEventArgs e)
+        {
+            logic.InsertMaterial(TBMaterialName.Text, TBMaterialCode.Text, TBMaterilComments.Text);
+            logic.LoadMaterials(DGMaterials);
         }
     }
 }
