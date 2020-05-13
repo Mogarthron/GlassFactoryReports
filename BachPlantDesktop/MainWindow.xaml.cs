@@ -1,4 +1,5 @@
-﻿using ModelsLibrary;
+﻿using BachPlantDesktop.ViewModels;
+using ModelsLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -100,6 +101,16 @@ namespace BachPlantDesktop
         {
             logic.InsertMaterial(TBMaterialName.Text, TBMaterialCode.Text, TBMaterilComments.Text);
             logic.LoadMaterials(DGMaterials);
+        }
+
+        private void BtnRecipes_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpWindow popUp = new PopUpWindow();
+            popUp.Title = "Recipes";
+            popUp.Width = 500;
+            popUp.Height = 200;
+            popUp.DataContext = new RecipesViewModel();
+            popUp.Show();
         }
     }
 }

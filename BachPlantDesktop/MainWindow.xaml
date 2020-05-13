@@ -16,7 +16,14 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" 
+              Grid.Column="0" 
+              Grid.ColumnSpan="1"
+              Height="30">
             <MenuItem Header="Options">
                 <MenuItem Header="Language">
                     <MenuItem x:Name="MLPolisch" Click="MLPolisch_Click"/>
@@ -24,7 +31,7 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <TabControl Grid.Row="1">
+        <TabControl Grid.Row="1" Grid.Column="1">
             <!--Recipes-->
             <TabItem x:Name="TCIRecipes">
                 <Grid>
@@ -88,6 +95,11 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button x:Name="BtnRecipes"  Content="Receptury" Click="BtnRecipes_Click"/>
+            <Button Content="Zesatwy"/>
+            <Button Content="Towary"/>
+            <Button Content="Strona starowa"/>
+        </StackPanel>
     </Grid>
 </Window>

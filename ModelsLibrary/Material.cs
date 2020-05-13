@@ -18,8 +18,8 @@ namespace ModelsLibrary
 
 		public string MaterialCode
 		{
-			get { return MaterialCode; }
-			set { MaterialCode = value; }
+			get { return _MaterialCode; }
+			set { _MaterialCode = value; }
 		}		
 
 		public string Comments
