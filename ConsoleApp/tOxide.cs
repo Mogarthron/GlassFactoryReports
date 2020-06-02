@@ -9,12 +9,13 @@ namespace ConsoleApp
         public string Name;
         public float MollarMass;
         public float DensityFactor;
+        public float Quantity;
 
-        public tOxide(string name, float mMass, float dFactor)
+        public tOxide(string name, float mMass)
         {
-            Name = name;
-            MollarMass = mMass;
-            DensityFactor = dFactor;
+            Name = name;            
+            MollarMass = mMass;            
         }
+                
     }
 }

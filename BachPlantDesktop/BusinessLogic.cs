@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using BachPlantDesktop.Tables;
 using Core3Library.Querys;
-using ModelsLibrary;
+
 
 namespace BachPlantDesktop
 {
@@ -29,18 +29,15 @@ namespace BachPlantDesktop
 
         public void UpdateRecipe(DataGrid dataGrid)
         {
-            Recipe recipe = (Recipe)dataGrid.SelectedItem;
+            ModelsLibrary.Recipe recipe = (ModelsLibrary.Recipe)dataGrid.SelectedItem;
 
-            int t = 1;
-            int f = 0;
-            
             if(recipe.Active == true)
             {                
-                recipeQuery.UpdateRecipeActivity(recipe.GetID(), t);
+                recipeQuery.UpdateRecipeActivity(recipe.GetID(), 1);
             }
             else
             {                
-                recipeQuery.UpdateRecipeActivity(recipe.GetID(), f);
+                recipeQuery.UpdateRecipeActivity(recipe.GetID(), 0);
             }            
         }
 
@@ -57,25 +54,21 @@ namespace BachPlantDesktop
         public void LoadRecipesNames(ComboBox comboBox)
         {
             List<string> recipeNames = new List<string>();
-
-            foreach(Recipe r in recipeQuery.UserRecipes())
-            {
-                recipeNames.Add(r.RecipeName);
-            }
+                        
+            recipeQuery.UserRecipes().ForEach(x => recipeNames.Add(x.RecipeName));
 
             comboBox.ItemsSource = recipeNames;
         }
 
         public void InsertBatch(DateTime date, string recipeName, int preparatedBatches)
-        {            
-            foreach(Recipe r in recipeQuery.UserRecipes())
+        {
+            recipeQuery.UserRecipes().ForEach(x =>
             {
-                if (recipeName == r.RecipeName)
-                { 
-                    //MessageBox.Show(r.GetID().ToString());
-                    batchQuery.InsertBatch(date, r.GetID(), preparatedBatches);
+                if(recipeName == x.RecipeName)
+                {
+                    batchQuery.InsertBatch(date, x.GetID(), preparatedBatches);
                 }
-            }            
+            });
         }
 
         #endregion

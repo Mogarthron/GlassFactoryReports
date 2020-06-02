@@ -74,6 +74,10 @@
     <Build Include="dbo\Tables\Towary.sql" />
     <Build Include="dbo\Stored Procedures\spTowary_PokazTowary.sql" />
     <Build Include="dbo\Stored Procedures\spTowary_DadajTowar.sql" />
+    <Build Include="dbo\Tables\RecepturySklady.sql" />
+    <Build Include="dbo\Stored Procedures\spRecepturySklady_DodajSurowiec.sql" />
+    <Build Include="dbo\Stored Procedures\spRecepturySklady_PokazWybrana.sql" />
+    <Build Include="dbo\Tables\Tlenki.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\ReportsDB.publish.xml" />

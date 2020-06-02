@@ -107,7 +107,7 @@ namespace BachPlantDesktop
         {
             PopUpWindow popUp = new PopUpWindow();
             popUp.Title = "Recipes";
-            popUp.Width = 500;
+            popUp.Width = 800;
             popUp.Height = 200;
             popUp.DataContext = new RecipesViewModel();
             popUp.Show();
