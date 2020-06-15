@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[UwagiDT]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[Data] DATE NOT NULL,
+	[CzegoDotyczy] NVARCHAR(30),
+	[Opis] TEXT
+)

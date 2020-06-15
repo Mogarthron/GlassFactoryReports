@@ -9,11 +9,15 @@ namespace ConsoleApp
         public DateTime _dateTime;
         string _WEFeed;
         string _WELevel;
-        int _WEPower;
+        float _WEPower;
         public int _WEBatch;
-        public float _PullRate;
+        public float _WEPullRate;
+        string _WGFeed;
+        string _WGLevel;
+        int _WGFlowOfGase;
+        public int _WGBatch;
 
-        public tMeltRepo(DateTime dateTime, string wefeed, string welevel, int power, int webatch)
+        public tMeltRepo(DateTime dateTime, string wefeed, string welevel, float power, int webatch)
         {
             _dateTime = dateTime;
             _WEFeed = wefeed;
@@ -25,7 +29,7 @@ namespace ConsoleApp
         public tMeltRepo(DateTime dateTime, float pullRate)
         {
             _dateTime = dateTime;
-            _PullRate = pullRate;
+            _WEPullRate = pullRate;
         }
         public tMeltRepo()
         {

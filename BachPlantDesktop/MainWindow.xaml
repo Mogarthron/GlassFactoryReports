@@ -97,8 +97,9 @@
         </TabControl>
         <StackPanel Grid.Row="1" Grid.Column="0">
             <Button x:Name="BtnRecipes"  Content="Receptury" Click="BtnRecipes_Click"/>
-            <Button Content="Zesatwy"/>
+            <Button x:Name="BtnBatches" Content="Zesatwy" Click="BtnBatches_Click"/>
             <Button Content="Towary"/>
+            <Button x:Name="BtnCommentsDT" Content="Uwagi DT" Click="BtnCommentsDT_Click"/>
             <Button Content="Strona starowa"/>
         </StackPanel>
     </Grid>

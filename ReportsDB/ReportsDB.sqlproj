@@ -78,6 +78,9 @@
     <Build Include="dbo\Stored Procedures\spRecepturySklady_DodajSurowiec.sql" />
     <Build Include="dbo\Stored Procedures\spRecepturySklady_PokazWybrana.sql" />
     <Build Include="dbo\Tables\Tlenki.sql" />
+    <Build Include="dbo\Tables\UwagiDT.sql" />
+    <Build Include="dbo\Stored Procedures\spUwagiDT_DodajUwage.sql" />
+    <Build Include="dbo\Stored Procedures\spUwagiDT_PokazWysztkie.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\ReportsDB.publish.xml" />

@@ -7,10 +7,16 @@
         xmlns:viewmodels="clr-namespace:BachPlantDesktop.ViewModels"
         xmlns:views="clr-namespace:BachPlantDesktop.Views"
         mc:Ignorable="d"
-        Title="" Height="300" Width="180">
+        Title="" Height="800" Width="180">
     <Window.Resources>
         <DataTemplate x:Name="RecipesTemplate" DataType="{x:Type viewmodels:RecipesViewModel}">
             <views:RecipesView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="CommentsDTTemplate" DataType="{x:Type viewmodels:CommentsDTViewModel}">
+            <views:CommentsDTView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Key="MennageCommnetTemplate" DataType="{x:Type viewmodels:MennageCommentViewModel }">
+            <views:MennageCommentView DataContext="{Binding}"/>
         </DataTemplate>
     </Window.Resources>
     

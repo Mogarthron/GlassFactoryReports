@@ -19,53 +19,53 @@ namespace ConsoleApp
             List<tMeltRepo> meltRepos = new List<tMeltRepo>()
             {
                 new tMeltRepo(new DateTime(2020,5,20,6,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,20,7,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,8,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,9,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,7,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,8,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,9,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,20,10,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,20,11,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,12,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,13,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,11,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,12,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,13,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,20,14,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,20,15,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,16,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,17,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,15,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,16,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,17,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,20,18,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,20,19,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,20,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,21,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,22,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,19,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,20,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,21,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,22,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,20,23,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,20,00,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,1,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,00,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,1,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,20,2,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,20,3,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,4,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,20,5,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,3,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,4,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,20,5,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,21,6,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,21,7,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,8,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,9,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,7,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,8,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,9,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,21,10,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,21,11,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,12,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,13,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,11,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,12,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,13,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,21,14,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,21,15,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,16,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,17,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,15,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,16,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,17,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,21,18,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,21,19,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,20,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,21,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,22,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,19,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,20,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,21,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,22,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,21,23,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,21,00,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,1,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,00,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,1,1,0),"5.5","5",145,0),
                 new tMeltRepo(new DateTime(2020,5,21,2,1,0),"5.5","5",145,1),
-                //new tMeltRepo(new DateTime(2020,5,21,3,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,4,1,0),"5.5","5",145,0),
-                //new tMeltRepo(new DateTime(2020,5,21,5,1,0),"5.5","5",145,0)
+                new tMeltRepo(new DateTime(2020,5,21,3,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,4,1,0),"5.5","5",145,0),
+                new tMeltRepo(new DateTime(2020,5,21,5,1,0),"5.5","5",145,0)
             };
 
             List<tMeltRepo> newMeltRepos = new List<tMeltRepo>();
@@ -74,7 +74,7 @@ namespace ConsoleApp
 
             //meltRepos.ForEach(x => Console.WriteLine("Czas {0} zasyp: {1}", x._dateTime, x._WEBatch));
 
-            //Faind indexes where batch = 1 and add index value to indexs List
+            //Find indexes where batch = 1 and add index value to indexs List
             meltRepos.ForEach(x =>
             {
                 if (x._WEBatch == 1)
@@ -105,8 +105,8 @@ namespace ConsoleApp
                         WEpullrate = WEBatchWeight / (div);
 
                         for (int r = 0; r < div; r++)
-                        {
-                            newMeltRepos.Add(new tMeltRepo(time1.AddHours(r), WEpullrate));
+                        {                            
+                            newMeltRepos.Add(new tMeltRepo(SetRepoDateTime(time1, r), WEpullrate));
                         }
                     }
                     else
@@ -117,48 +117,60 @@ namespace ConsoleApp
                         {
                             newMeltRepos.Add(new tMeltRepo(time1.AddHours(r), WEpullrate));
                         }
-                    }                                     
+                    }
 
                     c++;
                 }                
             }
 
-            newMeltRepos.ForEach(x => Console.WriteLine("Data {0:yyyy.MM.dd HH} wydobycie na godzine {1}", x._dateTime, x._PullRate));
+            //newMeltRepos.ForEach(x => Console.WriteLine("Data {0:yyyy.MM.dd HH} wydobycie na godzine {1}", x._dateTime, x._PullRate));
 
-            float Shift1 = 0;
-            float Shift2 = 0;
-            float Shift3 = 0;
+            WEShiftPullRate(newMeltRepos);
 
-            int firstDate = newMeltRepos[0]._dateTime.Day;
+        }
 
-            List<DateTime> dates = new List<DateTime>();
+        private DateTime SetRepoDateTime(DateTime date, int r)
+        {
+            int con = date.Day - date.AddHours(r).Day;
 
+            if (con != 0)
+            {
+                DateTime newTime = date.AddDays(-1);                
+                return newTime.AddHours(r);
+            }
+            else return date.AddHours(r);
+        }
 
+        private void WEShiftPullRate(List<tMeltRepo> newMeltRepos)
+        {                       
+            List<DateTime> Dates = newMeltRepos.Select(x => x._dateTime.Date).Distinct().ToList();            
 
-            
-            
+            List<tPullRateTable> ShiftPullRate = new List<tPullRateTable>();
 
-            //tPullRateTable rowOfTable;
-
-            //Console.WriteLine(newMeltRepos.Count);
-
-            //for (int j = 0; j < newMeltRepos.Count; j++)
-            //{
-            //    if ((firstDate - newMeltRepos[j]._dateTime.Day) == 0)
-            //    {
-            //        if (newMeltRepos[j]._dateTime.Hour >= 6 & newMeltRepos[j]._dateTime.Hour < 14) Shift1 += newMeltRepos[j]._PullRate;
-            //        else if (newMeltRepos[j]._dateTime.Hour >= 14 & newMeltRepos[j]._dateTime.Hour < 22) Shift2 += newMeltRepos[j]._PullRate;
-            //        else Shift3 += newMeltRepos[j]._PullRate;
-            //    }
-            //}
-
-            
-
-            //Console.WriteLine("Zmiana I: {0}", Shift1);
-            //Console.WriteLine("Zmiana II: {0}", Shift2);
-            //Console.WriteLine("Zmiana III: {0}", Shift3);
-            //Console.WriteLine("Całkowity pobór Opalu: {0}", Shift1 + Shift2 + Shift3);
-
+            foreach (DateTime d in Dates)
+            {
+                tPullRateTable tPullRate = new tPullRateTable(d.Date);
+                newMeltRepos.ForEach(x =>
+                { 
+                    if (x._dateTime.Date == d)
+                    {
+                        if (x._dateTime.Hour >= 6 & x._dateTime.Hour < 14) tPullRate.SetWE1(x._WEPullRate);
+                        else if (x._dateTime.Hour >= 14 & x._dateTime.Hour < 22) tPullRate.SetWE2(x._WEPullRate);
+                        else tPullRate.SetWE3(x._WEPullRate);
+                    }
+                });
+                ShiftPullRate.Add(tPullRate);
+            }
+            Console.WriteLine("Data | WE 1 | WE 2 | WE 3 | Opal");
+            ShiftPullRate.ForEach(x =>
+            {
+                //Console.WriteLine("Data: {00:yyyy.MM.dd}", x.date);
+                //Console.WriteLine("Zmiana I: {0}", x.WE1);
+                //Console.WriteLine("Zmiana II: {0}", x.WE2);
+                //Console.WriteLine("Zmiana III: {0}", x.WE3);
+                //Console.WriteLine("Całkowity pobór Opalu: {0}", x.OpalPullRate());
+                Console.WriteLine("{00:yyyy.MM.dd} | {1} | {2} | {3} | {4}", x.date, x.WE1, x.WE2, x.WE3, x.OpalPullRate());
+            });         
         }
 
         public void RecipeComposition()

@@ -112,5 +112,20 @@ namespace BachPlantDesktop
             popUp.DataContext = new RecipesViewModel();
             popUp.Show();
         }
+
+        private void BtnBatches_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCommentsDT_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpWindow popUp = new PopUpWindow();
+            popUp.Title = "Comments";
+            popUp.Width = 800;
+            popUp.Height = 300;
+            popUp.DataContext = new CommentsDTViewModel();
+            popUp.Show();
+        }
     }
 }
