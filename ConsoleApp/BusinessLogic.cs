@@ -192,20 +192,25 @@ namespace ConsoleApp
 
         public void GlassLevel()
         {
+
+            Console.Write("Podaj wysokość progu wyrobowego: ");
+
+            int HOPW = int.Parse(Console.ReadLine());
+
             int HeightOfMeltingArea = 430;
             int HeightOfProgWyrobowy = 15;
             int WidthOfMeltingArea = 1800;
             int WidthOfFuranceBase = 2850;
 
-            tFurance WWFurance = new tFurance(HeightOfMeltingArea, HeightOfProgWyrobowy, WidthOfMeltingArea, WidthOfFuranceBase);
+            tFurance WWFurance = new tFurance(HeightOfMeltingArea, HOPW, WidthOfMeltingArea, WidthOfFuranceBase);
 
             string mg;
             string ac;
             string spacja = "-----------------------------------------------";
 
-            Console.WriteLine("Podaj poziom szkła: ");
+            Console.Write("Podaj poziom szkła: ");
             mg = Console.ReadLine();
-            Console.WriteLine("Podaj wychylenie na siłowniku: ");
+            Console.Write("Podaj wychylenie na siłowniku: ");
             ac = Console.ReadLine();
 
             glassLevel = new tGlassLevel(WWFurance);           
@@ -213,10 +218,10 @@ namespace ConsoleApp
             Console.WriteLine(spacja);
             Console.WriteLine("Poziom szkła po postawiniu na 4 łapy: {0:##0.0}mm", glassLevel.LevelOfGlass(mg,ac));
             Console.WriteLine(spacja);
-            Console.WriteLine("Wysokość tafli szkła na przeciwległej ścianie: {0:##0.0}mm", glassLevel.EH());
-            Console.WriteLine(spacja);
-            Console.WriteLine("Kąt wychylenia podstawy wanny: {0:##0.00000}rad", glassLevel.aABC());            
-            Console.WriteLine(spacja);            
+            //Console.WriteLine("Wysokość tafli szkła na przeciwległej ścianie: {0:##0.0}mm", glassLevel.EH());
+            //Console.WriteLine(spacja);
+            //Console.WriteLine("Kąt wychylenia podstawy wanny: {0:##0.00000}rad", glassLevel.aABC());            
+            //Console.WriteLine(spacja);            
         }
 
         /// <summary>

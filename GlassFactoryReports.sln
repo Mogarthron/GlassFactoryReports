@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsLibrary", "ModelsLibr
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ReportsDB", "ReportsDB\ReportsDB.sqlproj", "{0E1A0208-93C0-48D9-948F-0137B560ADDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{ABFD1A82-CFA4-477C-BD7E-74CC891B7E8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{ABFD1A82-CFA4-477C-BD7E-74CC891B7E8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandLineApp", "CommandLineApp\CommandLineApp.csproj", "{52254863-F026-46E6-8A0A-F2C1D4D3A5EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualityControllDesktop", "QualityControllDesktop\QualityControllDesktop.csproj", "{471303BB-F9A2-4980-9C45-C43E88B79160}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,14 @@ Global
 		{ABFD1A82-CFA4-477C-BD7E-74CC891B7E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABFD1A82-CFA4-477C-BD7E-74CC891B7E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABFD1A82-CFA4-477C-BD7E-74CC891B7E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52254863-F026-46E6-8A0A-F2C1D4D3A5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52254863-F026-46E6-8A0A-F2C1D4D3A5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52254863-F026-46E6-8A0A-F2C1D4D3A5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52254863-F026-46E6-8A0A-F2C1D4D3A5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{471303BB-F9A2-4980-9C45-C43E88B79160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{471303BB-F9A2-4980-9C45-C43E88B79160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{471303BB-F9A2-4980-9C45-C43E88B79160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{471303BB-F9A2-4980-9C45-C43E88B79160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,10 +13,27 @@ namespace Core3Library.Querys
         List<string> sp = new List<string>()
         {
             "dbo.spZestawy_DodajZestaw",
-            "dbo.spZestawy_PokazWszystko"
-        };
-
+            "dbo.spZestawy_PokazWszystko",
+            "dbo.spZestawy_PokazZakres"
+        }; 
         
+        public List<Batch> ShowRange(DateTime date1, DateTime date2)
+        {
+            batches.Clear();
+
+            dB.AddParameterToList("@Date1", System.Data.SqlDbType.Date, date1/*.ToShortDateString()*/);
+            dB.AddParameterToList("@Date2", System.Data.SqlDbType.Date, date2/*.ToShortDateString()*/);
+
+            dB.StartConnection(sp[2]);
+
+            while (dB.dataReader.Read())
+            {
+                batches.Add(new Batch(dB.dataReader.GetDateTime(0), dB.dataReader.GetString(1), dB.dataReader.GetInt16(2)));
+            }
+
+            dB.EndConnection();
+            return batches;
+        }
 
         public List<Batch> ShowBatches()
         {
@@ -34,11 +51,11 @@ namespace Core3Library.Querys
             return batches;
         }
 
-        public void InsertBatch(DateTime _date, int _id_recipe, int _preparatedBatches)
+        public void InsertBatch(DateTime date, int id_recipe, int preparatedBatches)
         {
-            dB.AddParameterToList("@DataPrzygotowania", System.Data.SqlDbType.Date, _date.ToShortDateString());
-            dB.AddParameterToList("@id_Receptury", System.Data.SqlDbType.Int, _id_recipe);
-            dB.AddParameterToList("@ZrobioneZestawy", System.Data.SqlDbType.SmallInt, _preparatedBatches);
+            dB.AddParameterToList("@DataPrzygotowania", System.Data.SqlDbType.Date, date.ToShortDateString());
+            dB.AddParameterToList("@id_Receptury", System.Data.SqlDbType.Int, id_recipe);
+            dB.AddParameterToList("@ZrobioneZestawy", System.Data.SqlDbType.SmallInt, preparatedBatches);
 
             dB.Connection(sp[0]);
         }

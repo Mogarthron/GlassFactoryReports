@@ -14,13 +14,7 @@ namespace BachPlantDesktop
 		//popUp.Show();
 
 
-		PopUpWindow window;
-
-		public PopUpWindow Window
-		{
-			get { return window; }
-			set { value = window; }
-		}
+		PopUpWindow window;		
 
 		public void PopUpShow()
 		{

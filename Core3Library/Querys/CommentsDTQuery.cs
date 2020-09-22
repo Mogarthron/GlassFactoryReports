@@ -34,7 +34,7 @@ namespace Core3Library.Querys
         public void AddComment(DateTime _date, string _title, string _discription)
         {
             dB.AddParameterToList("@Data", System.Data.SqlDbType.Date, _date);
-            dB.AddParameterToList("@Dodtyczy", System.Data.SqlDbType.NVarChar, _title);
+            dB.AddParameterToList("@Dotyczy", System.Data.SqlDbType.NVarChar, _title);
             dB.AddParameterToList("@Opis", System.Data.SqlDbType.Text, _discription);
 
             dB.Connection(sp[1]);

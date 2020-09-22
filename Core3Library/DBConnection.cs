@@ -74,6 +74,10 @@ namespace Core3Library
             cnn.Open();
             command = new SqlCommand(sp, cnn);
             command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (SqlParameters != null)
+                command.Parameters.AddRange(SqlParameters.ToArray());
+
             dataReader = command.ExecuteReader();
         }
 
@@ -81,7 +85,11 @@ namespace Core3Library
         {
             dataReader.Close();
             command.Dispose();
+
+            if (SqlParameters != null) SqlParameters.Clear();
+
             cnn.Close();
+
         }
     }
 }

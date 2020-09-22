@@ -20,11 +20,28 @@
                  AcceptsReturn="True"
                  AcceptsTab="True"
                  />
-        <Button x:Name="AddBtn" 
-                Content="Dodaj Komentarz" 
-                Width="200" 
-                Height="50" 
-                Margin="0,0,600,0"/>
+        <WrapPanel Orientation="Horizontal">
+            <Button x:Name="AddBtn"                 
+                Width="80" 
+                Height="50"
+                Click="AddBtn_Click">                
+                <TextBlock x:Name="AddBtnContentTBlock" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"
+                       Text="Dodaj">                    
+                </TextBlock>
+            </Button>            
+            <Button x:Name="DelBtn"                 
+                Width="80" 
+                Height="50">
+                <TextBlock x:Name="DelBtnContentTBloc"                        
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"
+                       Text="Usuń">                    
+                </TextBlock>
+            </Button>
+        </WrapPanel>
+        
     </StackPanel>
     
 </UserControl>

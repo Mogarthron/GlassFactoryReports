@@ -9,7 +9,7 @@ namespace ConsoleApp
         {
             BusinessLogic logic = new BusinessLogic();
 
-            OpenTXT file = new OpenTXT("TopRap.txt");
+            //OpenTXT file = new OpenTXT("TopRap.txt");
 
 
             //Console.WriteLine("{0}: {1}",file.meltRepo[0]._dateTime,file.meltRepo[0]._WEBatch);
@@ -26,12 +26,12 @@ namespace ConsoleApp
 
             //logic.MeltingReport();
 
-            //logic.TableOfGlassLevel(30, 330, 40, 360);
+            logic.TableOfGlassLevel(100, 250, 40, 400);
 
-            //while (true)
-            //{
-            //    logic.GlassLevel();
-            //}
+            while (true)
+            {
+                logic.GlassLevel();
+            }
         }        
     }
 }

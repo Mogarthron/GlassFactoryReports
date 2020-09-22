@@ -40,7 +40,15 @@ namespace ModelsLibrary
             _Date = date.ToShortDateString();
             _NameOfRecipe = recipeName;
             _SumOfPreparedBatches = sum;
-        }                
+        }  
+        
+        public Batch(DateTime date, string recipeName, int sum)
+        {
+            _PreparationDate = date;
+            _Date = date.ToShortDateString();
+            _NameOfRecipe = recipeName;
+            _SumOfPreparedBatches = sum;
+        }
 
         public Batch()
         {

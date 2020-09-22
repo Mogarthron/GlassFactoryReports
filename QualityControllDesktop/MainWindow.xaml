@@ -1,0 +1,249 @@
+﻿<Window x:Class="QualityControllDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QualityControllDesktop"
+        xmlns:viewmodels="clr-namespace:QualityControllDesktop.ViewModels"
+        xmlns:views="clr-namespace:QualityControllDesktop.Views"
+        mc:Ignorable="d"
+        Title="Quality Controll"
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow">
+    <Window.Resources>        
+        <Style TargetType="Button" x:Key="QuaBtn">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="80 "/>
+            <Setter Property="Margin" Value="1,1,1,1"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel x:Name="Conteiner">        
+        <WrapPanel Height="30">
+            <Label>Asortyment:</Label>
+            <TextBox x:Name="TBAsortyment" Text="200922_1050" Width="100"/>
+            <Label>Sortujący:</Label>
+            <TextBox x:Name="TBSortujacy" Text="Pani Sor1" Width="100"/>
+            <!--<Label>Czas do Wylogowania:</Label>-->
+        </WrapPanel>
+        
+        <Button x:Name="btn_Dobre" Height="60" Content="Dobre" Click="btn_Dobre_Click"></Button>
+        
+        <WrapPanel Orientation="Vertical">
+            
+            <Label>Wady Masy Bezbarwnej</Label>
+            
+            <WrapPanel Orientation="Horizontal">
+                
+                <Button x:Name="btn1" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn1_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Pęcherz
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Pojedynczy
+                        </TextBlock>
+                    </StackPanel>                    
+                </Button>
+                
+                <Button x:Name="btn2" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn2_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Skupisko
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Pęcherzy
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btn3" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn3_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Smuga
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Bezbarwna
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btn4" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn4_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Smuga
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Barwna
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btn5" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn5_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Kamień
+                        </TextBlock>                        
+                    </StackPanel>
+                </Button>              
+
+                <Button x:Name="btn6"
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn6_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Kręte
+                        </TextBlock>                        
+                    </StackPanel>
+                </Button>
+                
+                <Button x:Name="btn7" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn7_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Meszka
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btn8" 
+                        Style="{StaticResource QuaBtn}"
+                        Click="btn8_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Wtrącenia
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Ceramiczne
+                        </TextBlock>
+                    </StackPanel>                    
+                </Button>
+            </WrapPanel>            
+        </WrapPanel>
+        
+        <WrapPanel Orientation="Vertical">
+            <Label>Wady Masy Opalowej</Label>
+            <!--<WrapPanel Orientation="Horizontal">
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Pęcherz
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Pojedynczy
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Skupisko
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Pęcherzy
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Smuga
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Bezbarwna
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Smuga
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Barwna
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Kamień
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Kręte
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Meszka
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Wtrącenia
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Ceramiczne
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+            </WrapPanel>
+            <WrapPanel>
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Plama
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Jasna
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource QuaBtn}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center">
+                            Plama
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center">
+                            Ciemna
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+            </WrapPanel>-->
+
+        </WrapPanel>       
+        
+        <WrapPanel Orientation="Vertical">
+            <Label>Wady Hutnicze</Label>
+            <WrapPanel x:Name="WPWadyHutnicze1" Orientation="Horizontal">
+                
+            </WrapPanel>
+        </WrapPanel>
+    </StackPanel>
+</Window>

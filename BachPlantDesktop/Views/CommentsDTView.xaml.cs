@@ -29,7 +29,7 @@ namespace BachPlantDesktop.Views
         private void AddCommentBtn_Click(object sender, RoutedEventArgs e)
         {
             MennageCommentView view = new MennageCommentView();
-                       
+                                  
             PopUpControll pop = new PopUpControll("Utwórz Komentarz", 800, 500, view);
 
             pop.PopUpShow();

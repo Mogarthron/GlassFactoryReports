@@ -24,6 +24,8 @@ namespace BachPlantDesktop
     {
         BusinessLogic logic = new BusinessLogic();
 
+        
+
         string[] LanguageVer = { "Polski", "Englisch" };
         string[] AppTitle = { "Zestawiarnia", "Batch Plant" };
         string[] RecipesTabControllItem = { "Receptury", "Recipes" };
@@ -97,20 +99,34 @@ namespace BachPlantDesktop
 
         #endregion
 
-        private void BtnOpenAddMaterialWindow_Click(object sender, RoutedEventArgs e)
+
+
+        private void BtnClicked(object s, RoutedEventArgs e)
         {
+            List<Button> buttons = new List<Button>
+            {
+                BtnCommentsDT,
+                BtnRecipes
+            };
+
+            foreach(Button btn in buttons)
+            {
+                
+            }
+            
+        }
+
+        private void BtnOpenAddMaterialWindow_Click(object sender, RoutedEventArgs e)
+        {            
             logic.InsertMaterial(TBMaterialName.Text, TBMaterialCode.Text, TBMaterilComments.Text);
             logic.LoadMaterials(DGMaterials);
         }
 
         private void BtnRecipes_Click(object sender, RoutedEventArgs e)
         {
-            PopUpWindow popUp = new PopUpWindow();
-            popUp.Title = "Recipes";
-            popUp.Width = 800;
-            popUp.Height = 200;
-            popUp.DataContext = new RecipesViewModel();
-            popUp.Show();
+            RecipesViewModel view = new RecipesViewModel();
+            PopUpControll pop = new PopUpControll("Receptury", 800, 200, view);
+            pop.PopUpShow();
         }
 
         private void BtnBatches_Click(object sender, RoutedEventArgs e)
@@ -120,12 +136,9 @@ namespace BachPlantDesktop
 
         private void BtnCommentsDT_Click(object sender, RoutedEventArgs e)
         {
-            PopUpWindow popUp = new PopUpWindow();
-            popUp.Title = "Comments";
-            popUp.Width = 800;
-            popUp.Height = 300;
-            popUp.DataContext = new CommentsDTViewModel();
-            popUp.Show();
+            CommentsDTViewModel view = new CommentsDTViewModel();
+            PopUpControll pop = new PopUpControll("Komentarze", 800, 600, view);
+            pop.PopUpShow();            
         }
     }
 }

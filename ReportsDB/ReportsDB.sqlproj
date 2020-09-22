@@ -81,6 +81,8 @@
     <Build Include="dbo\Tables\UwagiDT.sql" />
     <Build Include="dbo\Stored Procedures\spUwagiDT_DodajUwage.sql" />
     <Build Include="dbo\Stored Procedures\spUwagiDT_PokazWysztkie.sql" />
+    <Build Include="dbo\Tables\RaportTopiarza.sql" />
+    <Build Include="dbo\Stored Procedures\spZestawy_PokazZakres.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\ReportsDB.publish.xml" />

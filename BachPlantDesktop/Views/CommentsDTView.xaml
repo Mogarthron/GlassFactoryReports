@@ -6,15 +6,18 @@
              xmlns:local="clr-namespace:BachPlantDesktop.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <WrapPanel>
-        <DataGrid x:Name="CommentsDTDataGrid" Height="400" Width="600">
+    <StackPanel x:Name="Container">
+        <DataGrid x:Name="CommentsDTDataGrid" 
+                  Height="400" 
+                  Width="800"
+                  Margin="0,0,200,0">
 
         </DataGrid>
-        <StackPanel>
+        <WrapPanel Orientation="Horizontal">
             <Button x:Name="AddCommentBtn" Click="AddCommentBtn_Click">Dodaj komentarz</Button>
             <Button>Edytuj komentarz</Button>
             <Button>Usuń komentarz</Button>
             <Button>Odświerz</Button>
-        </StackPanel>
-    </WrapPanel>
+        </WrapPanel>
+    </StackPanel>
 </UserControl>

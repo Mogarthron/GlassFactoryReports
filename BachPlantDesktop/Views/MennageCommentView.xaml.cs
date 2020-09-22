@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BachPlantDesktop.ViewModels;
 
 namespace BachPlantDesktop.Views
 {
@@ -18,9 +19,17 @@ namespace BachPlantDesktop.Views
     /// </summary>
     public partial class MennageCommentView : UserControl
     {
+        //CommentsDTViewModel model = new CommentsDTViewModel();
+        MennageCommentViewModel model = new MennageCommentViewModel();
+        
         public MennageCommentView()
         {
             InitializeComponent();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {            
+            model.query.AddComment(DateDP.SelectedDate.Value, TitleTB.Text, DiscriptionTB.Text);            
         }
     }
 }
