@@ -23,12 +23,22 @@ namespace QualityControllDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        BusinessLogic logic = new BusinessLogic();
+
         public MainWindow()
         {            
-            InitializeComponent();
+            InitializeComponent();            
         }
 
-        private void ReportTxt(string orderId, string QuEmpId, int defectId)
+        List<string> DefNames = new List<string>() 
+        {
+            "Dobre",
+            "P. pojedynczy",
+            "Skupisko pecherzy",
+            "Smuga bezbarwna"
+        };
+
+        private void ReportTxt(string orderId, string QuEmpId, string defectId)
         {
             string filePath = @".\Raporty\" + orderId + ".csv";
             DateTime date = DateTime.Now;           
@@ -42,47 +52,49 @@ namespace QualityControllDesktop
 
         private void btn_Dobre_Click(object sender, RoutedEventArgs e)
         {          
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 1);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, DefNames[0]);
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 2);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, DefNames[1]);
         }
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 3);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, DefNames[2]);
         }
 
         private void btn3_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 4);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, DefNames[3]);
         }
 
         private void btn4_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 5);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, "Smuga Barwna");
         }
 
         private void btn5_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 6);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, "Kamien");
         }
 
         private void btn6_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 7);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, "Krete");
         }
 
         private void btn7_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 8);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, "Meszka");
         }
 
         private void btn8_Click(object sender, RoutedEventArgs e)
         {
-            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, 9);
+            ReportTxt(TBAsortyment.Text, TBSortujacy.Text, "Wtracenia Ceramiczne");
         }
+
+
     }
 }

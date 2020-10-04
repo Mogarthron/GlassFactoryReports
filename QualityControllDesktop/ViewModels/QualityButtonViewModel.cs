@@ -6,68 +6,107 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using QualityControllDesktop.Views;
+using QualityControllDesktop.Models;
+using System.ComponentModel;
+using System.Windows.Data;
+using System.Windows.Input;
 
 namespace QualityControllDesktop.ViewModels
 {
-    public class QualityButtonViewModel
+    public class QualityButtonViewModel : INotifyPropertyChanged
     {
-        private int _Heigh;        
+        QualityButtonModel _buttonModel;
 
-        private int _Width;
+        string kartaFormowania;
+        string sortujacy;
 
-        public string _Name;
+        public string TBAsortyment
+        {
+            get { return kartaFormowania; }
+            set
+            {
+                kartaFormowania = value;
+                OnPropertyChaged(nameof(TBAsortyment));
+            }
+        }
 
-        private RoutedEventHandler _EventHandler;
-        
-        private List<string> _LayersOfText;                
+        //public string TBSortujacy 
+        //{ 
+        //    get { return sortujacy; }
+        //    set
+        //    {
+        //        sortujacy = value;
+        //        OnPropertyChaged(nameof(TBSortujacy));
+        //    }
+        //}
+
+        private ICommand czyTBAsortymentSieZmienilo;
+        //private ICommand tbSortujacy;
+
+        public ICommand CzyTBAsortymentSieZmienilo
+        {
+            get 
+            { 
+                if (czyTBAsortymentSieZmienilo == null) return new RelayCommand(
+                    (object o) => 
+                    {
+                        OnPropertyChaged(TBAsortyment);
+                    });
+                return czyTBAsortymentSieZmienilo;
+            }
+        }
 
         public QualityButtonView SetButton()
-        {
-            QualityButtonView button = new QualityButtonView();                   
-
-            button.Name = _Name;
-
-            button.Height = _Heigh;
-            button.Width = _Width;            
-
-            _LayersOfText.ForEach(x =>
+        {            
+            QualityButtonView button = new QualityButtonView();
+          
+            button.Name = _buttonModel.Name;            
+            button.Height = _buttonModel.Height;                
+            button.Width = _buttonModel.Width;
+          
+            _buttonModel.LayersOfText.ForEach(x =>
             {
                 TextBlock tb = new TextBlock();
                 tb.TextAlignment = System.Windows.TextAlignment.Center;
                 tb.Text = x;
                 button.SPLabels.Children.Add(tb);
+
             });
 
-            //Button btn = new Button();
+            button.BtnBody.Margin = new Thickness(1, 1, 1, 1);
 
-            //string btnName = "btn_" + _Name;
-            //btn.Name = btnName;
+            button.BtnBody.Click += new RoutedEventHandler(btnClicked);              
 
-            //btn.Click += new RoutedEventHandler(_EventHandler); 
-
-            button.BtnBody.Click += new RoutedEventHandler(btnClicked);
-            
             return button;
         }
 
         private void btnClicked(object sender, RoutedEventArgs e)
         {
-            string filePath = @".\Raporty\" + "000000_0000" + ".csv";
+            string filePath = @".\Raporty\" + "test"+ CzyTBAsortymentSieZmienilo + ".csv";
             DateTime date = DateTime.Now;
 
-            string entry = date.ToString("yyyy.MM.dd HH:mm:ss") + ',' + "xxxx" + ',' + "222222";
+            string entry = date.ToString("yyyy.MM.dd HH:mm:ss") + ',' + "Pani_Sor12" + ',' + _buttonModel.id_Defect;
 
             string[] row = { entry };
 
             File.AppendAllLines(filePath, row.ToList());
         }
 
-        public QualityButtonViewModel(string name, int height, int width, List<string> layersOfText)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChaged(string propName)
         {
-            _Name = name;
-            _Heigh = height;
-            _Width = width;
-            _LayersOfText = layersOfText;
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
+
+        public QualityButtonViewModel()
+        {
+
+        }
+        
+        public QualityButtonViewModel(QualityButtonModel model)
+        {
+            _buttonModel = model;
+        }       
     }
 }

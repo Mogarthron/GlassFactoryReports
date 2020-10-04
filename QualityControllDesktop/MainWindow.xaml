@@ -15,15 +15,20 @@
             <Setter Property="Height" Value="50"/>
             <Setter Property="Width" Value="80 "/>
             <Setter Property="Margin" Value="1,1,1,1"/>
-        </Style>
-    </Window.Resources>
-    <StackPanel x:Name="Conteiner">        
+        </Style>        
+    </Window.Resources>    
+    
+    <StackPanel x:Name="Conteiner"> 
+        
+        <!--<Grid x:Name="HaderControll"/>--> 
+        
         <WrapPanel Height="30">
+            <Label>Stanowisko: 1</Label>
             <Label>Asortyment:</Label>
-            <TextBox x:Name="TBAsortyment" Text="200922_1050" Width="100"/>
+            <TextBox x:Name="TBAsortyment" Width="100"/>
             <Label>Sortujący:</Label>
-            <TextBox x:Name="TBSortujacy" Text="Pani Sor1" Width="100"/>
-            <!--<Label>Czas do Wylogowania:</Label>-->
+            <TextBox x:Name="TBSortujacy" Width="100"/>
+            <Label>Czas do Wylogowania:</Label>
         </WrapPanel>
         
         <Button x:Name="btn_Dobre" Height="60" Content="Dobre" Click="btn_Dobre_Click"></Button>
@@ -133,6 +138,7 @@
         
         <WrapPanel Orientation="Vertical">
             <Label>Wady Masy Opalowej</Label>
+            <WrapPanel x:Name="WPWadyMasyOpalowej" Orientation="Horizontal"/>
             <!--<WrapPanel Orientation="Horizontal">
 
                 <Button Style="{StaticResource QuaBtn}">
@@ -242,7 +248,7 @@
         <WrapPanel Orientation="Vertical">
             <Label>Wady Hutnicze</Label>
             <WrapPanel x:Name="WPWadyHutnicze1" Orientation="Horizontal">
-                
+                <!--<views:QualityButtonView/>-->
             </WrapPanel>
         </WrapPanel>
     </StackPanel>
